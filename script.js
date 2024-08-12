@@ -47,9 +47,9 @@ function addMoney() { // onClicker pressed add ClickGain
   money = money + clickGain;
   
   
-  localStorage.setItem('moneys', money);
-  localStorage.setItem('clickGains', clickGain);
-  localStorage.setItem('autoGains', autoGain);
+ // localStorage.setItem('moneys', money);
+  //localStorage.setItem('clickGains', clickGain);
+  //localStorage.setItem('autoGains', autoGain);
 }
 
 function updateMoney(check=true) {//update html money txt
