@@ -1,0 +1,484 @@
+
+
+<html>
+<head>
+	<!--<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		
+		if (window.Telegram && window.Telegram.WebApp) {
+			window.Telegram.WebApp.expand();
+		}
+	});
+	</script>-->
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+	window.Telegram.WebApp.ready();
+	window.Telegram.WebApp.expand();
+	</script>
+	<!--<script>
+	let tg = window.Telegram;
+  
+    if(tg != undefined){
+      if (tg.WebApp != undefined && tg.WebApp.initData != undefined){
+       
+      let safe    = tg.WebApp.initData;
+      
+      tg.WebApp.backgroundColor = '#3d3d3d';
+      tg.WebApp.headerColor = '#212121';
+      tg.WebApp.expand();
+	</script>-->
+	
+	<title>Trampoline !</title>
+	<link rel="stylesheet" media="screen" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<meta charset="utf-8">
+	
+</head>
+
+
+<body>
+	<!-- PLAYER MONEY -->
+	<p id="money" class="money-text"></p>
+	<!-- MAIN CLICKER BUTTON -->
+	<button id="main-clicker" class="clicker">
+		<img id="logo-clicker" src="img/StandartBatoot2.png" draggable=false class="clicker"></img>
+	</button>
+	
+	<!--<form action="boosts.html" target="_self">
+	<button id="b4" class="button" ><b></b>Улучшения</button>
+	</form>-->
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Модальный (фон) */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
+  background-color: rgba(0,0,0,0.4); /*Черный с непрозрачностью */
+  -webkit-animation-name: fadeIn; /* Исчезают в фоновом режиме */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Модальное содержание */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(154, 33, 95, 1) /*rgba(255, 0, 132, 1)*/;
+  width: 100%;
+  height: 70%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* Кнопка закрытия */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+ left: 50%;
+  padding: 15px 16px;
+  background-color: rgba(154, 33, 95, 1);
+  color: white;
+}
+
+.modal-body {
+	/*padding: 2px 16px;
+	padding: 1rem;
+	overflow-y: scroll;*/
+	position: absolute;
+  width: 96%;
+  /*top: 3rem;*/
+  /*left: 15%;*/
+  /*box-sizing: border-box;*/
+  padding: 1rem;
+  /*border: 1px solid black;*/
+  height: 50vh;
+  overflow-y: scroll;
+  /*text-align: center;*/
+	}
+	
+/*.modal-body::-webkit-scrollbar {
+  width: 0;*/
+}
+	
+.modal-body {
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+}
+
+.modal-body::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+}
+
+<!--.modal-footer {
+  padding: 2px 160px;
+  background-color: #5cb85c;
+  color: white;-->
+  
+}
+
+/* Добавить анимацию */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+</style>
+</head>
+
+
+<!-- ПЕРВОЕ МОДАЛЬНОЕ ОКНО УЛУЧШЕНИЙ  -->
+
+<body>
+<!--<h1>Модальном окно внизу</h1>-->
+
+
+<!-- Триггер / Открыть Модальный -->
+<!--<button id="myBtn">Открыть модальном окно</button>-->
+<!--<form action="boosts.html" target="_self">-->
+	<button id="myBtn" class="boostbtn" ><b></b>УЛУЧШЕНИЯ</button>
+	<!--</form>
+
+<!-- Модальном окно -->
+<div id="myModal" class="modal">
+
+  <!-- Модальное содержание -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Улучшения батута</h2>
+    </div>
+    <div class="modal-body">
+	<!-- SHOP BUTTONS -->
+	<!--<button id="b1" class="button" disabled><b></b>Деньги за нажатие x2</button>-->
+	<button id="b2" class="button" disabled><b></b> Jumps + 5/sec</button>
+	<button id="b3" class="button" disabled><b></b> Jumps x2/sec</button>
+	<button id="b6" class="button" disabled><b></b> Пробная btn для скролла</button>
+	<!--<button id="b4" class="button_batoots" disabled><b></b>Деньги за нажатие x2</button>-->
+	<!--<button id="b5" class="button" disabled><b></b>Деньги за нажатие x2</button>-->
+      <p> </p>
+      <p> </p>
+    </div>
+    <!--<div class="modal-footer">
+      <h3>Это низ окна</h3>-->
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+	<!--<script src="script.js"></script>-->
+	
+		
+	
+	<!-- ВТОРОЕ МОДАЛЬНОЕ ОКНО УЛУЧШЕНИЙ  -->
+
+<style>
+/*body {font-family: Arial, Helvetica, sans-serif;}*/
+
+/* Модальный (фон) */
+.modal_2 {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
+  background-color: rgba(0,0,0,0.4); /*Черный с непрозрачностью */
+  -webkit-animation-name: fadeIn; /* Исчезают в фоновом режиме */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Модальное содержание */
+.modal-content_2 {
+  position: fixed;
+  bottom: 0;
+  background-color: #000000;
+  width: 100%;
+  height: 70%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* Кнопка закрытия */
+.close_2 {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_2:hover,
+.close_2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header_2 {
+ left: 50%;
+  padding: 15px 16px;
+  background-color: #000000;
+  color: white;
+}
+
+.modal-body_2 {
+	/*padding: 2px 16px;
+	padding: 1rem;
+	overflow-y: scroll;*/
+	position: absolute;
+  width: 96%;
+  /*top: 3rem;*/
+  /*left: 15%;*/
+  /*box-sizing: border-box;*/
+  padding: 1rem;
+  /*border: 1px solid black;*/
+  height: 50vh;
+  overflow-y: scroll;
+  text-align: center;
+	}
+	
+	/*.modal-body_2::-webkit-scrollbar {
+  width: 0;*/
+}
+	
+.modal-body_2 {
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+}
+
+.modal-body_2::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+}
+
+<!--.modal-footer {
+  padding: 2px 160px;
+  background-color: #5cb85c;
+  color: white;-->
+  
+}
+
+/* Добавить анимацию */
+@-webkit-keyframes_2 slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes_2 slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes_2 fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes_2 fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+</style>
+</head>	
+	
+	
+<body>
+<!--<h1>Модальном окно внизу</h1>-->
+
+
+<!-- Триггер / Открыть Модальный -->
+<!--<button id="myBtn">Открыть модальном окно</button>-->
+<!--<form action="boosts.html" target="_self">-->
+	<button id="myBtn_2" class="boostbtn_2" ><b></b>БАТУТЫ</button>
+	<!--</form>
+
+<!-- Модальном окно -->
+<div id="myModal_2" class="modal_2">
+
+  <!-- Модальное содержание -->
+  <div class="modal-content_2">
+    <div class="modal-header_2">
+      <span class="close_2">&times;</span>
+      <h2>Обновить батут</h2>
+    </div>
+    <div class="modal-body_2">
+	<!-- SHOP BUTTONS -->
+	<button id="b4" class="button_batoots" disabled><b></b> Jumps за нажатие x2</button>
+	<button id="b5" class="button_batoots" disabled><b></b> Jumps за нажатие x5</button>
+	<button id="b7" class="button_batoots" disabled><b></b> Пробная btn для скролла</button>
+	
+      <p> </p>
+      <p> </p>
+    </div>
+    <!--<div class="modal-footer">
+      <h3>Это низ окна</h3>-->
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal_2 = document.getElementById("myModal_2");
+
+// Get the button that opens the modal
+var btn_2 = document.getElementById("myBtn_2");
+
+// Get the <span> element that closes the modal
+var span_2 = document.getElementsByClassName("close_2")[0];
+
+// When the user clicks the button, open the modal 
+btn_2.onclick = function() {
+  modal_2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span_2.onclick = function() {
+  modal_2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event_2) {
+  if (event_2.target == modal_2) {
+    modal_2.style.display = "none";
+  }
+}
+</script>		
+	
+	
+	<!--         ================= НИЗ ПРИЛОЖЕНИЯ С КНОПКАМИ ======================== -->
+	
+	<div class="footer">
+  <p></p>
+ 
+  <button id="home" class="footer_buttons_home">
+  <img id="logo-home" src="img/Kliker_home.png" draggable=false class="footer_buttons_home"></img>
+  </button>
+  
+  
+  <form action="tasks.html" target="_self">
+  <button id="tasks" class="footer_buttons_tasks">
+  <img id="logo-tasks" src="img/Kliker_Tasks.png" draggable=false class="footer_buttons_tasks"></img>
+  </button>
+  </form>
+  
+  
+  <form action="friends.html" target="_self">
+  <button id="friends" class="footer_buttons_friends">
+  <img id="logo-friends" src="img/Kliker_Friends.png" draggable=false class="footer_buttons_friends"></img>
+  </button>
+  </form>
+  
+ <!-- <style>
+body {
+  font-family: PT Astra Sans;
+   background-color: #e9e9f0;
+   }
+.footer {
+  background-color: #2e34e5;
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   text-align: center; 
+   width: 100%;   
+   font-size: 19px;
+font-weight: bold;
+  color: #fafaff;  
+ }
+</style>-->
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	<!-- Load Javascript -->
+	<script src="script.js"></script>
+</body>
+</html>
