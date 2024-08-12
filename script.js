@@ -9,7 +9,7 @@ var //money = 0,//parseInt(localStorage.getItem('moneys')),//global player's mon
 
 	
 	// ДЕНЬГИ ПОЛЬЗОВАТЕЛЯ
-	if ((localStorage.getItem('moneys')) > 0){
+	/*if ((localStorage.getItem('moneys')) > 0){
 		var money = parseInt(localStorage.getItem('moneys'));
 		
 	}
@@ -26,7 +26,7 @@ var //money = 0,//parseInt(localStorage.getItem('moneys')),//global player's mon
 	else{
 		var clickGain = 1;
 	}
-	
+	*/
 	
 /*if (clickGain >= 1){
 		clickGain = parseInt(localStorage.getItem('clickGains'));
