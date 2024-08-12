@@ -8,29 +8,6 @@ var //money = 0,//parseInt(localStorage.getItem('moneys')),//global player's mon
 	interval;//auto money interval
 
 	
-	// ДЕНЬГИ ПОЛЬЗОВАТЕЛЯ
-	/*if ((localStorage.getItem('moneys')) > 0){
-		var money = parseInt(localStorage.getItem('moneys'));
-		
-	}
-	else{
-		var money = 0;
-	}
-	
-	
-	// ДЕНЬГИ ЗА ОДИН КЛИК
-	if ((localStorage.getItem('clickGains')) >= 1){
-		var clickGain = parseInt(localStorage.getItem('clickGains'));
-		
-	}
-	else{
-		var clickGain = 1;
-	}
-	*/
-	
-/*if (clickGain >= 1){
-		clickGain = parseInt(localStorage.getItem('clickGains'));
-	}*/
 
 
 
@@ -47,9 +24,7 @@ function addMoney() { // onClicker pressed add ClickGain
   money = money + clickGain;
   
   
- // localStorage.setItem('moneys', money);
-  //localStorage.setItem('clickGains', clickGain);
-  //localStorage.setItem('autoGains', autoGain);
+ 
 }
 
 function updateMoney(check=true) {//update html money txt
